@@ -55,7 +55,7 @@ class Graph:
         # 5° Results, if there is a negative cycle --> computing possible profit
         if not neg_cycle:
             print("\nNo arbitrage opportunity.")
-            self.Display_Graph(dist, path, 0, 0)
+            self.Display_Graph(path, 0, 0)
 
         else:
             print("\nFound negative cycle:")
@@ -66,7 +66,7 @@ class Graph:
                 prec = i
             profit = round(profit, 4)
             print("  Profit: ", profit)
-            self.Display_Graph(dist, neg_cycle, profit, 1)
+            self.Display_Graph(neg_cycle, profit, 1)
 
     def Negative_Cycle(self, dist, path):
 
@@ -85,7 +85,7 @@ class Graph:
 
         return False
 
-    def Display_Graph(self, dist, path, profit, flag):
+    def Display_Graph(self, path, profit, flag):
 
         path_edges = []
         graph_view = nx.MultiDiGraph()
@@ -96,16 +96,7 @@ class Graph:
         pos = nx.circular_layout(graph_view)
 
         if flag == 0:
-
-            path_distance = []
-
-            for i in range(self.vertices):
-                path_edges.append((path[i], i))
-            for i in range(self.vertices):
-                path_distance.append(str((i, dist[i])))
-
-            plt.text(-1.5, -1.1, "Distance from Source:\n" + '\n'.join(path_distance),
-                     bbox=dict(boxstyle="square", facecolor="white"), size=12.5)
+            
             plt.title('NO Arbitrage Opportunity, NO Negative Cycle', fontsize=20)
 
         else:
@@ -131,8 +122,8 @@ class Graph:
                 connectionstyle='arc3, rad = 0.1')
         nx.draw_networkx_labels(graph_view, pos, labels, font_size=16, font_color='black')
 
-        mng = plt.get_current_fig_manager()
-        mng.window.state('zoomed')
+        #mng = plt.get_current_fig_manager()
+        #mng.window.state('zoomed')
         plt.show()
 
 
