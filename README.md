@@ -7,6 +7,6 @@ Finding arbitrage opportunities corresponds to search for a negative cycle in th
 After detecting it, the possible profit is computed and the graph (with the negative cycle highlighted) is displayed using the library networkx.
 
 
-*Disclaimer
+*Disclaimer:
 The arbitrages detected are only theoretical, thus more frequent than in real market, because the program doesn't cover the actual transaction fees imposed by the financial institution you are operating with (as they are variable).
 This disparity between theoretical model and reality is accentuated with the trade of exotic currencies. Because they are volatile and illiquid, the fees will be higher on those as the bid-ask spread is usually large to compensate the lack of liquidity.*
