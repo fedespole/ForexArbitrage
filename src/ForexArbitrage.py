@@ -117,7 +117,7 @@ class Graph:
         for i in range(len(self.tickers)):
             labels[i] = self.tickers[i]
 
-        nx.draw_networkx_edge_labels(graph_view, pos, label_pos=0.28, edge_labels=edge_labels)      # SISTEMARE
+        nx.draw_networkx_edge_labels(graph_view, pos, label_pos=0.28, edge_labels=edge_labels)   
         nx.draw(graph_view, pos, node_size=1500, node_color=node_colors, edge_color=edge_colors, with_labels=False,
                 connectionstyle='arc3, rad = 0.1')
         nx.draw_networkx_labels(graph_view, pos, labels, font_size=16, font_color='black')
