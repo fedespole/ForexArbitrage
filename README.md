@@ -2,7 +2,7 @@
 
 Python program that detects arbitrage opportunities in the foreign exchange market using Bellman-Ford algorithm.
 
-Given in input a list of currencies, the program:
+Given as input a list of currencies, the program:
   
  - Gathers currency pairs from yahoo_finance database, using pandas_datareader subpackage, and organizes them in a matrix data structure.
  - Abstracts the exchange market creating a graph model with currency as nodes and exchange rates as arches.
